@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d50ad0e-0580-42a9-8beb-5bdd3cb82b3f" name="Default Changelist" comment="" />
+    <list default="true" id="6d50ad0e-0580-42a9-8beb-5bdd3cb82b3f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SclScanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SclScanner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SclScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SclScanner.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +17,17 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SclScanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="5" lean-forward="true" selection-end-line="205" />
+            <state relative-caret-position="443">
+              <caret line="209" column="25" lean-forward="true" selection-start-line="209" selection-start-column="25" selection-end-line="209" selection-end-column="25" />
               <folding>
-                <element signature="e#0#8118#0" expanded="true" />
+                <element signature="e#0#8496#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#3997#3998#0" expanded="true" />
+                <element signature="e#4033#4034#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -33,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -52,8 +59,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1273" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="812" />
+    <option name="y" value="-21" />
     <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
@@ -64,30 +72,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SclScanner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SclScanner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SclScanner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SclScanner" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -134,10 +129,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="932" y="129" width="1400" height="1256" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27552673" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13751987" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -166,41 +160,17 @@
       <window_info anchor="right" id="Coverage" order="8" side_tool="true" />
     </layout>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SclScanner.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/SclScanner.java</url>
-          <line>62</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/SclScanner.java</url>
-          <line>61</line>
-          <properties class="SclScanner.Scanner" method="scanToken">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Token.java" />
     <entry file="file://$PROJECT_DIR$/src/SclScanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" lean-forward="true" selection-end-line="205" />
+        <state relative-caret-position="443">
+          <caret line="209" column="25" lean-forward="true" selection-start-line="209" selection-start-column="25" selection-end-line="209" selection-end-column="25" />
           <folding>
-            <element signature="e#0#8118#0" expanded="true" />
+            <element signature="e#0#8496#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#3997#3998#0" expanded="true" />
+            <element signature="e#4033#4034#0" expanded="true" />
           </folding>
         </state>
       </provider>

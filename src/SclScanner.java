@@ -1,5 +1,16 @@
-// Java Program to illustrate reading from FileReader 
-// using BufferedReader 
+/*
+University Name: Kennesaw State University
+College: College of Computing and Software Engineering
+Department: Department of Computer Science
+Course: CS 4308
+Course Title: Concepts of Programming Languages
+Section: Section W01
+Term: Summer 2019
+Instructor: Dr. Jose Garrido
+Student Name: Michael Wessels, Woohyung Song, Russ Grant
+Student Email: mwessel1@students.kennesaw.edu,  wsong3@students.kennesaw.edu, jgrant64@students.kennesaw.edu
+Assignment: Term Project 1st Deliverable
+*/
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -15,14 +26,17 @@ public class SclScanner
         File file = new File("C:\\Users\\Mike\\Documents\\SclExample.txt");
         Scanner scanner = new Scanner(Files.readString(file.toPath(), StandardCharsets.US_ASCII));
 
+        // scan the tokens and store them in a list
         List<Token> tokens = scanner.scanTokens();
+
+        // reiterate the list of tokens to display in the console
         for (int i = 0; i < tokens.size(); i++) {
             System.out.println("Token Type: " + tokens.get(i).type + " Token Lexeme: " + tokens.get(i).lexeme + "\n");
         }
     }
 
 
-
+// Scanner class that can be given a string of scl code from a file
 static class Scanner {
     private final String source;
     private final List<Token> tokens = new ArrayList<>();
@@ -30,17 +44,21 @@ static class Scanner {
     private int current = 0;
     private int line = 1;
 
+    // checks to see if the character is a alphabetical symbol and if so returns true
     private boolean isAlpha(char c) {
         return (c >= 'a' && c <= 'z') ||
                 (c >= 'A' && c <= 'Z') ||
                 c == '_';
     }
 
+    // if the token is either a letter or digit return true
     private boolean isAlphaNumeric(char c) {
         return isAlpha(c) || isDigit(c);
     }
 
+    // If given a string of words this method will decide what the Identifier is
     private void identifier() {
+        // continue until the next character is not a letter
         while (isAlphaNumeric(peek())) advance();
 
         String s = source.substring(start, current);
@@ -59,9 +77,11 @@ static class Scanner {
         }
     }
 
+    // Method for scanning each token and deciding what TokenType to give the Token
     private void scanToken() {
         char c = advance();
         switch (c) {
+            // look at single characters first since they are the easiest case to handle
             case '(': addToken(TokenType.LEFT_PAREN); break;
             case ')': addToken(TokenType.RIGHT_PAREN); break;
             case '{': addToken(TokenType.LEFT_BRACE); break;
@@ -84,11 +104,13 @@ static class Scanner {
             case '=':
                 System.out.println(" Unexpected character: "+ c +" ,on line: " + line + " should be preceded by ':' for assignment");
                 break;
+                // The next 3 cases are so that white space is ignored
             case ' ':
             case '\r':
             case '\t':
                 // Ignore whitespace.
                 break;
+                // if there is a break then increment the line number
             case '\n':
                 line++;
                 break;
@@ -98,20 +120,24 @@ static class Scanner {
                 } else if (isAlpha(c)) {
                     identifier();
                 } else {
+                    // if no case is selected then display a helpful message
                     System.out.println(" Unexpected character: "+ c +" ,on line: " + line);
                 }
         }
     }
 
+    // retrieves the next char and increments the current index of the scanned string
     private char advance() {
         current++;
         return source.charAt(current - 1);
     }
 
+    // adds the token if only given a type
     private void addToken(TokenType type) {
         addToken(type, null);
     }
 
+    // adds a token if both the type and literal are given
     private void addToken(TokenType type, Object literal) {
         String text = source.substring(start, current);
         if (type == TokenType.EQUAL) {
@@ -121,16 +147,24 @@ static class Scanner {
         tokens.add(new Token(type, text, literal, line));
     }
 
+    // constructor for the scanner takes in a string of scl code
     Scanner(String source) {
         this.source = source;
     }
+
+    // Helper method to check if the line is the last one
     private boolean isAtEnd() {
         return current >= source.length();
     }
+
+    // Helper method for checking if the character is a digit
     private boolean isDigit(char c) {
         return c >= '0' && c <= '9';
     }
+
+    // Helper method to get a long number such as 123
     private void number() {
+        // Continue until the next character is not a number
         while (isDigit(peek())) advance();
 
         // Look for a fractional part.
@@ -144,14 +178,21 @@ static class Scanner {
         addToken(TokenType.NUMBER,
                 Double.parseDouble(source.substring(start, current)));
     }
+
+    // Look ahead and see what the current character is
     private char peek() {
         if (isAtEnd()) return '\0';
         return source.charAt(current);
     }
+
+    // Look ahead and see what the next character is
     private char peekNext() {
+        // If the next char is the end of the file return  /0 to display that
         if (current + 1 >= source.length()) return '\0';
         return source.charAt(current + 1);
     }
+
+    // scans all tokens and returns a list of tokens
     private List<Token> scanTokens() {
         while (!isAtEnd()) {
             // We are at the beginning of the next lexeme.
@@ -164,12 +205,14 @@ static class Scanner {
     }
 }
 
+// Token class to give each scanned character an assigned type, lexeme, literal, and line.
 static class Token {
     final TokenType type;
     final String lexeme;
     final Object literal;
     final int line;
 
+    // constructor for the Token
     Token(TokenType type, String lexeme, Object literal, int line) {
         this.type = type;
         this.lexeme = lexeme;
@@ -182,6 +225,7 @@ static class Token {
     }
 }
 
+// Enum for the different Token Types
 enum TokenType {
     // Single-character tokens.
     LEFT_PAREN, RIGHT_PAREN, LEFT_BRACE, RIGHT_BRACE,
