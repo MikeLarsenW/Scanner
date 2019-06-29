@@ -8,25 +8,6 @@ import java.util.*;
 public class SclScanner
 {
     public static void main(String[] args) throws Exception {
-        final Map<String, TokenType> keywords;
-
-        keywords = new HashMap<>();
-        keywords.put("and",    TokenType.AND);
-        keywords.put("class",  TokenType.CLASS);
-        keywords.put("else",  TokenType. ELSE);
-        keywords.put("false",  TokenType.FALSE);
-        keywords.put("then",    TokenType.THEN);
-        keywords.put("fun",    TokenType.FUN);
-        keywords.put("if",     TokenType.IF);
-        keywords.put("nil",    TokenType.NIL);
-        keywords.put("or",     TokenType.OR);
-        keywords.put("print",  TokenType.PRINT);
-        keywords.put("return", TokenType.RETURN);
-        keywords.put("super",  TokenType.SUPER);
-        keywords.put("this",   TokenType.THIS);
-        keywords.put("true",   TokenType.TRUE);
-        keywords.put("var",    TokenType.VAR);
-        keywords.put("while",  TokenType.WHILE);
 
         // We need to provide file path as the parameter:
         // double backquote is to avoid compiler interpret words
@@ -62,13 +43,26 @@ static class Scanner {
     private void identifier() {
         while (isAlphaNumeric(peek())) advance();
 
-        addToken(TokenType.IDENTIFIER);
+        String s = source.substring(start, current);
+
+        switch (s) {
+            case "IF": addToken(TokenType.IF); break;
+            case "WHILE": addToken(TokenType.WHILE); break;
+            case "ELSE": addToken(TokenType.ELSE); break;
+            case "END_WHILE": addToken(TokenType.END_WHILE); break;
+            case "true": addToken(TokenType.TRUE); break;
+            case "false": addToken(TokenType.FALSE); break;
+            case "NOT": addToken(TokenType.NOT); break;
+            case "THEN": addToken(TokenType.THEN); break;
+            case "ENDIF": addToken(TokenType.ENDIF); break;
+            default: addToken(TokenType.IDENTIFIER); break;
+        }
     }
 
     private void scanToken() {
         char c = advance();
         switch (c) {
-            case 'o': addToken(TokenType.LEFT_PAREN); break;
+            case '(': addToken(TokenType.LEFT_PAREN); break;
             case ')': addToken(TokenType.RIGHT_PAREN); break;
             case '{': addToken(TokenType.LEFT_BRACE); break;
             case '}': addToken(TokenType.RIGHT_BRACE); break;
@@ -78,6 +72,18 @@ static class Scanner {
             case '+': addToken(TokenType.PLUS); break;
             case ';': addToken(TokenType.SEMICOLON); break;
             case '*': addToken(TokenType.STAR); break;
+            case '>': addToken(TokenType.GREATER); break;
+            case '<': addToken(TokenType.LESS); break;
+            case ':':
+                if (peek() == '=') {
+                    addToken(TokenType.EQUAL);
+                } else {
+                    System.out.println(" Unexpected character: "+ c +" ,on line: " + line + " should be followed by '=' for assignment");
+                }
+                break;
+            case '=':
+                System.out.println(" Unexpected character: "+ c +" ,on line: " + line + " should be preceded by ':' for assignment");
+                break;
             case ' ':
             case '\r':
             case '\t':
@@ -92,7 +98,7 @@ static class Scanner {
                 } else if (isAlpha(c)) {
                     identifier();
                 } else {
-                    System.out.println(line + "Unexpected character on line.");
+                    System.out.println(" Unexpected character: "+ c +" ,on line: " + line);
                 }
         }
     }
@@ -108,6 +114,10 @@ static class Scanner {
 
     private void addToken(TokenType type, Object literal) {
         String text = source.substring(start, current);
+        if (type == TokenType.EQUAL) {
+            text = ":=";
+            advance();
+        }
         tokens.add(new Token(type, text, literal, line));
     }
 
@@ -178,7 +188,7 @@ enum TokenType {
     COMMA, DOT, MINUS, PLUS, SEMICOLON, SLASH, STAR,
 
     // One or two character tokens.
-    BANG_EQUAL,
+    NOT, BANG_EQUAL,
     EQUAL, EQUAL_EQUAL,
     GREATER, GREATER_EQUAL,
     LESS, LESS_EQUAL,
@@ -188,7 +198,7 @@ enum TokenType {
 
     // Keywords.
     AND, CLASS, ELSE, FALSE, FUN, FOR, IF, NIL, OR, THEN,
-    PRINT, RETURN, SUPER, THIS, TRUE, VAR, WHILE,
+    PRINT, RETURN, SUPER, THIS, TRUE, VAR, WHILE, END_WHILE, ENDIF,
 
     EOF
 }
