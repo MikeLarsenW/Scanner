@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d50ad0e-0580-42a9-8beb-5bdd3cb82b3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/SclScanner/Assignment3/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SclScanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SclScanner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SclScanner/SclScanner$Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SclScanner/SclScanner$Scanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SclScanner/SclScanner$Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SclScanner/SclScanner$Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SclScanner/SclScanner$TokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SclScanner/SclScanner$TokenType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SclScanner/SclScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SclScanner/SclScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignment3/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SclScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SclScanner.java" afterDir="false" />
-    </list>
+    <list default="true" id="6d50ad0e-0580-42a9-8beb-5bdd3cb82b3f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SclScanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="732">
-              <caret line="228" column="16" lean-forward="true" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
+            <state relative-caret-position="358">
+              <caret line="204" column="5" lean-forward="true" selection-start-line="204" selection-start-column="5" selection-end-line="204" selection-end-column="5" />
               <folding>
                 <element signature="e#0#8496#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -88,7 +78,20 @@
             <path>
               <item name="SclScanner" type="b2602c69:ProjectViewProjectNode" />
               <item name="SclScanner" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SclScanner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SclScanner" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SclScanner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SclScanner" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="SclScanner" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -186,8 +189,8 @@
     <entry file="file://$PROJECT_DIR$/src/Token.java" />
     <entry file="file://$PROJECT_DIR$/src/SclScanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="228" column="16" lean-forward="true" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
+        <state relative-caret-position="358">
+          <caret line="204" column="5" lean-forward="true" selection-start-line="204" selection-start-column="5" selection-end-line="204" selection-end-column="5" />
           <folding>
             <element signature="e#0#8496#0" expanded="true" />
             <element signature="imports" expanded="true" />
